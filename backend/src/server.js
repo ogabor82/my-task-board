@@ -9,6 +9,23 @@ const PORT = Number(process.env.PORT) || 3001;
 app.use(morgan("dev"));
 app.use(express.json());
 
+app.get("/api/boards", async (req, res, next) => {
+  try {
+    const boards = await prisma.board.findMany({
+      orderBy: { id: "asc" },
+      include: {
+        tasks: {
+          orderBy: [{ position: "asc" }, { id: "asc" }]
+        }
+      }
+    });
+
+    return res.json(boards);
+  } catch (error) {
+    return next(error);
+  }
+});
+
 function parseId(value, name) {
   const parsed = Number(value);
   if (!Number.isInteger(parsed) || parsed <= 0) {

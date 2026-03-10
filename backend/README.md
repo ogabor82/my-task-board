@@ -37,6 +37,7 @@ npm run seed
 
 ## Endpoints
 
+- `GET /api/boards`
 - `GET /api/boards/:boardId`
 - `POST /api/boards`
 - `PUT /api/boards/:boardId`
