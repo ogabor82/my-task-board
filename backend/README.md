@@ -11,6 +11,7 @@ npm install
 ```
 
 2. Create `.env` from `.env.example`.
+   Set `FRONTEND_ORIGIN` to your frontend URL (default: `http://localhost:5173`).
 
 3. Create database and Prisma client:
 
