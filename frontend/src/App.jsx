@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import TaskCard from "./components/TaskCard";
 import TaskEditorModal from "./components/TaskEditorModal";
+import AddRoundDuotoneIcon from "./components/icons/AddRoundDuotoneIcon";
 import { STATUS_STYLE } from "./constants/taskUi";
 import { useBoardStore } from "./store/boardStore";
 
@@ -134,8 +135,8 @@ export default function App() {
           onClick={openNewTask}
           className="bg-addBg shadow-soft mt-1 flex min-h-[96px] items-center gap-4 rounded-2xl px-4 py-4 sm:px-5"
         >
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent text-2xl text-white">
-            +
+          <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent">
+            <AddRoundDuotoneIcon className="h-6 w-6" />
           </span>
           <span className="text-title text-[34px] font-semibold tracking-[-0.02em]">Add new task</span>
         </button>
