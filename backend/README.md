@@ -27,6 +27,14 @@ npm run dev
 
 Server defaults to `http://localhost:3001`.
 
+## Seed Data
+
+Populate/reset the board + tasks shown in the challenge preview:
+
+```bash
+npm run seed
+```
+
 ## Endpoints
 
 - `GET /api/boards/:boardId`
