@@ -2,7 +2,7 @@
   "name": "my-task-board-backend",
   "version": "1.0.0",
   "private": true,
-  "description": "Express + Prisma + SQLite backend for My Task Board",
+  "description": "Express + Prisma + PostgreSQL backend for My Task Board",
   "main": "src/server.js",
   "scripts": {
     "dev": "node --watch src/server.js",

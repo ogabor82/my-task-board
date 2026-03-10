@@ -1,6 +1,6 @@
 # Backend API
 
-Node.js + Express + Prisma + SQLite backend for the task board project.
+Node.js + Express + Prisma + PostgreSQL backend for the task board project.
 
 ## Setup
 

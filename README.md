@@ -45,7 +45,7 @@ Repository:
 
 ### Database
 
-* SQLite
+* PostgreSQL
 
 ### Deployment
 
