@@ -72,6 +72,10 @@ function normalizeTaskInput(task, index) {
     return { error: "Task status must be a string or null." };
   }
 
+  if (task.icon !== undefined && task.icon !== null && typeof task.icon !== "string") {
+    return { error: "Task icon must be a string or null." };
+  }
+
   if (task.position !== undefined && !Number.isInteger(task.position)) {
     return { error: "Task position must be an integer." };
   }
@@ -80,6 +84,7 @@ function normalizeTaskInput(task, index) {
     value: {
       title: task.title.trim(),
       description: task.description ?? null,
+      icon: task.icon ?? null,
       status: task.status ?? null,
       position: task.position ?? index
     }
@@ -283,6 +288,13 @@ app.put("/api/tasks/:taskId", async (req, res, next) => {
         return badRequest(res, "status must be a string or null.");
       }
       updates.status = req.body.status;
+    }
+
+    if (req.body.icon !== undefined) {
+      if (req.body.icon !== null && typeof req.body.icon !== "string") {
+        return badRequest(res, "icon must be a string or null.");
+      }
+      updates.icon = req.body.icon;
     }
 
     if (req.body.position !== undefined) {

@@ -4,12 +4,13 @@ const prisma = new PrismaClient();
 
 async function main() {
   const tasks = [
-    { title: "Task in Progress", description: null, status: "in-progress", position: 0 },
-    { title: "Task Completed", description: null, status: "completed", position: 1 },
-    { title: "Task Won't Do", description: null, status: "wont-do", position: 2 },
+    { title: "Task in Progress", description: null, icon: "⏰", status: "in-progress", position: 0 },
+    { title: "Task Completed", description: null, icon: "🏋️", status: "completed", position: 1 },
+    { title: "Task Won't Do", description: null, icon: "☕", status: "wont-do", position: 2 },
     {
       title: "Task To Do",
       description: "Work on a challenge on devChallenges.io, learn TypeScript.",
+      icon: "📚",
       status: "todo",
       position: 3
     }
