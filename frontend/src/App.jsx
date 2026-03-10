@@ -4,20 +4,9 @@ import TaskEditorModal from "./components/TaskEditorModal";
 import AddRoundDuotoneIcon from "./components/icons/AddRoundDuotoneIcon";
 import { STATUS_STYLE } from "./constants/taskUi";
 import { useBoardStore } from "./store/boardStore";
+import LogoIcon from "./components/icons/LogoIcon";
+import EditDuotoneIcon from "./components/icons/EditDuotoneIcon";
 
-function TitleIcon() {
-  return (
-    <span className="relative h-10 w-10 shrink-0">
-      <span className="absolute left-0 top-3 h-6 w-8 -rotate-6 rounded-md bg-[#f6e8cf]" />
-      <span className="absolute left-1 top-1 h-6 w-8 -rotate-6 rounded-md bg-[#f0c06d]" />
-      <span className="absolute left-2 top-0 h-6 w-8 -rotate-6 rounded-md bg-[#e39d2f]" />
-    </span>
-  );
-}
-
-function EditPencil() {
-  return <span className="text-[18px] text-[#141633]">✎</span>;
-}
 
 function makeDraft(task = null) {
   const status = task?.status || "todo";
@@ -98,11 +87,13 @@ export default function App() {
       <section className="mx-auto flex w-full max-w-[780px] flex-col gap-5">
         <header className="mb-2">
           <div className="flex items-center gap-3">
-            <TitleIcon />
+            <LogoIcon className="h-10 w-10" />
             <h1 className="text-title text-[52px]/[1.05] font-semibold tracking-[-0.03em] sm:text-[64px]/[1]">
               {board?.title || "My Task Board"}
             </h1>
-            <EditPencil />
+            <EditDuotoneIcon
+              className="h-10 w-10"
+            />
           </div>
           <p className="text-text mt-3 pl-[54px] text-[27px]/[1.2] font-normal">
             {board?.description || "Tasks to keep organised"}
