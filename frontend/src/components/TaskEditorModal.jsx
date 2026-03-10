@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ICON_OPTIONS, STATUS_OPTIONS } from "../constants/taskUi";
 import CloseRingDuotoneAltIcon from "./icons/CloseRingDuotoneAltIcon";
 import TrashIcon from "./icons/TrashIcon";
@@ -13,6 +14,23 @@ export default function TaskEditorModal({
   onSave,
   onDelete
 }) {
+  useEffect(() => {
+    if (!open) {
+      return undefined;
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [open, onClose]);
+
   if (!open) {
     return null;
   }
