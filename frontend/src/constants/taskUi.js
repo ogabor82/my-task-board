@@ -1,11 +1,17 @@
 import { createElement } from "react";
 import CloseRingDuotoneIcon from "../components/icons/CloseRingDuotoneIcon";
 import DoneRoundDuotoneIcon from "../components/icons/DoneRoundDuotoneIcon";
+import TimeAtackDuotoneIcon from "../components/icons/TimeAtackDuotoneIcon";
 
 export const ICON_OPTIONS = ["🧑🏻‍💻", "💬", "☕", "🏋️", "📚", "⏰"];
 
 export const STATUS_OPTIONS = [
-  { value: "in-progress", label: "In Progress", badge: "◔", badgeBg: "bg-accent" },
+  {
+    value: "in-progress",
+    label: "In Progress",
+    badge: createElement(TimeAtackDuotoneIcon, { className: "h-5 w-5" }),
+    badgeBg: "bg-accent"
+  },
   {
     value: "completed",
     label: "Completed",
@@ -25,7 +31,7 @@ export const STATUS_STYLE = {
   "in-progress": {
     defaultIcon: "⏰",
     container: "bg-card",
-    badge: "◔",
+    badge: createElement(TimeAtackDuotoneIcon, { className: "h-5 w-5" }),
     badgeBg: "bg-accent"
   },
   completed: {
