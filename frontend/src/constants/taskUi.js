@@ -1,9 +1,17 @@
+import { createElement } from "react";
+import CloseRingDuotoneIcon from "../components/icons/CloseRingDuotoneIcon";
+
 export const ICON_OPTIONS = ["🧑🏻‍💻", "💬", "☕", "🏋️", "📚", "⏰"];
 
 export const STATUS_OPTIONS = [
   { value: "in-progress", label: "In Progress", badge: "◔", badgeBg: "bg-accent" },
   { value: "completed", label: "Completed", badge: "✓", badgeBg: "bg-accentDone" },
-  { value: "wont-do", label: "Won't do", badge: "✕", badgeBg: "bg-accentReject" },
+  {
+    value: "wont-do",
+    label: "Won't do",
+    badge: createElement(CloseRingDuotoneIcon, { className: "h-5 w-5" }),
+    badgeBg: "bg-accentReject"
+  },
   { value: "todo", label: "To Do", badge: null, badgeBg: "bg-cardTodo" }
 ];
 
@@ -23,7 +31,7 @@ export const STATUS_STYLE = {
   "wont-do": {
     defaultIcon: "☕",
     container: "bg-cardReject",
-    badge: "✕",
+    badge: createElement(CloseRingDuotoneIcon, { className: "h-5 w-5" }),
     badgeBg: "bg-accentReject"
   },
   todo: {
