@@ -1,4 +1,7 @@
 import { ICON_OPTIONS, STATUS_OPTIONS } from "../constants/taskUi";
+import CloseRingDuotoneAltIcon from "./icons/CloseRingDuotoneAltIcon";
+import TrashIcon from "./icons/TrashIcon";
+import DoneRoundIcon from "./icons/DoneRoundIcon";
 
 export default function TaskEditorModal({
   open,
@@ -27,7 +30,7 @@ export default function TaskEditorModal({
             onClick={onClose}
             aria-label="Close editor"
           >
-            ✕
+            <CloseRingDuotoneAltIcon className="h-5 w-5" />
           </button>
         </div>
 
@@ -64,11 +67,10 @@ export default function TaskEditorModal({
                     key={icon}
                     type="button"
                     onClick={() => onChange("icon", icon)}
-                    className={`grid h-12 w-12 place-items-center rounded-xl text-xl ${
-                      active
-                        ? "bg-[#eecf57] ring-2 ring-[#e1be2f]"
-                        : "bg-[#dbe0e8] text-[#2a3141] hover:bg-[#cfd6e2]"
-                    }`}
+                    className={`grid h-12 w-12 place-items-center rounded-xl text-xl ${active
+                      ? "bg-[#eecf57] ring-2 ring-[#e1be2f]"
+                      : "bg-[#dbe0e8] text-[#2a3141] hover:bg-[#cfd6e2]"
+                      }`}
                   >
                     {icon}
                   </button>
@@ -87,9 +89,8 @@ export default function TaskEditorModal({
                     key={status.value}
                     type="button"
                     onClick={() => onChange("status", status.value)}
-                    className={`flex items-center gap-3 rounded-2xl border px-3 py-2 text-left ${
-                      active ? "border-[#3562df] bg-white" : "border-[#cfd6e2] bg-[#f8f9fb]"
-                    }`}
+                    className={`flex items-center gap-3 rounded-2xl border px-3 py-2 text-left ${active ? "border-[#3562df] bg-white" : "border-[#cfd6e2] bg-[#f8f9fb]"
+                      }`}
                   >
                     <span className={`${status.badgeBg} grid h-11 w-11 place-items-center rounded-xl text-2xl text-white`}>
                       {status.badge || "•"}
@@ -117,7 +118,7 @@ export default function TaskEditorModal({
               disabled={saving}
               className="rounded-full bg-[#a8b3c5] px-8 py-3 text-[29px] font-medium text-white disabled:opacity-70"
             >
-              Delete
+              Delete <TrashIcon className="h-5 w-5" />
             </button>
           ) : null}
           <button
@@ -127,6 +128,7 @@ export default function TaskEditorModal({
             className="rounded-full bg-[#3562df] px-10 py-3 text-[29px] font-medium text-white disabled:opacity-70"
           >
             {saving ? "Saving..." : "Save"}
+            <DoneRoundIcon className="h-5 w-5" />
           </button>
         </div>
       </div>
