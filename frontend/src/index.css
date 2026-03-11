@@ -12,7 +12,7 @@ body,
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 20% 0%, #ececf0 0%, #e3e4e9 55%, #dde0e6 100%);
+  background: #e6e7eb;
   color: #101226;
   font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }

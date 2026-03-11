@@ -83,19 +83,19 @@ export default function App() {
   };
 
   return (
-    <main className="min-h-full bg-page px-5 py-10 sm:px-10">
-      <section className="mx-auto flex w-full max-w-[780px] flex-col gap-5">
-        <header className="mb-2">
-          <div className="flex items-center gap-3">
+    <main className="min-h-full bg-page px-4 py-6 sm:px-6 sm:py-8">
+      <section className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
+        <header className="mb-3">
+          <div className="flex items-center gap-2">
             <LogoIcon className="h-10 w-10" />
-            <h1 className="text-title text-type-title font-normal">
+            <h1 className="text-title text-type-title leading-none font-normal">
               {board?.title || "My Task Board"}
             </h1>
             <EditDuotoneIcon
-              className="h-10 w-10"
+              className="h-5 w-5"
             />
           </div>
-          <p className="text-text text-type-description mt-3 pl-[54px] font-normal">
+          <p className="text-text text-type-description mt-2 pl-[48px] font-normal">
             {board?.description || "Tasks to keep organised"}
           </p>
         </header>
@@ -124,7 +124,7 @@ export default function App() {
         <button
           type="button"
           onClick={openNewTask}
-          className="bg-addBg shadow-soft mt-1 flex min-h-[96px] items-center gap-4 rounded-2xl px-4 py-4 sm:px-5"
+          className="bg-addBg shadow-soft flex min-h-[80px] items-center gap-4 rounded-2xl px-4 py-4"
         >
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent">
             <AddRoundDuotoneIcon className="h-6 w-6" />
