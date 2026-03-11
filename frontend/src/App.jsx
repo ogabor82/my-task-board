@@ -85,17 +85,17 @@ export default function App() {
   return (
     <main className="min-h-full bg-page px-4 py-6 sm:px-6 sm:py-8">
       <section className="mx-auto flex w-full max-w-[560px] flex-col gap-4">
-        <header className="mb-3">
+        <header className="mb-3 mt-5">
           <div className="flex items-center gap-2">
             <LogoIcon className="h-10 w-10" />
-            <h1 className="text-title text-type-title leading-none font-normal">
+            <h1 className="text-title text-type-title leading-none font-normal ml-2">
               {board?.title || "My Task Board"}
             </h1>
             <EditDuotoneIcon
               className="h-5 w-5"
             />
           </div>
-          <p className="text-text text-type-description mt-2 pl-[48px] font-normal">
+          <p className="text-text text-type-description mt-8 font-normal">
             {board?.description || "Tasks to keep organised"}
           </p>
         </header>
