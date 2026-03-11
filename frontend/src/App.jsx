@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, lazy, useEffect, useMemo, useState } from "react";
 import TaskCard from "./components/TaskCard";
-import TaskEditorModal from "./components/TaskEditorModal";
 import AddRoundDuotoneIcon from "./components/icons/AddRoundDuotoneIcon";
 import { STATUS_STYLE } from "./constants/taskUi";
 import { useBoardStore } from "./store/boardStore";
 import LogoIcon from "./components/icons/LogoIcon";
 import EditDuotoneIcon from "./components/icons/EditDuotoneIcon";
 
+const TaskEditorModal = lazy(() => import("./components/TaskEditorModal"));
 
 function makeDraft(task = null) {
   const status = task?.status || "todo";
@@ -133,16 +133,20 @@ export default function App() {
         </button>
       </section>
 
-      <TaskEditorModal
-        open={modalOpen}
-        mode={mode}
-        draft={draft}
-        saving={saving}
-        onClose={closeModal}
-        onChange={onChangeDraft}
-        onSave={onSave}
-        onDelete={onDelete}
-      />
+      {modalOpen ? (
+        <Suspense fallback={null}>
+          <TaskEditorModal
+            open={modalOpen}
+            mode={mode}
+            draft={draft}
+            saving={saving}
+            onClose={closeModal}
+            onChange={onChangeDraft}
+            onSave={onSave}
+            onDelete={onDelete}
+          />
+        </Suspense>
+      ) : null}
     </main>
   );
 }
