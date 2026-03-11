@@ -5,10 +5,10 @@ A simple full-stack task management application built as part of a DevChallenges
 ## Demo
 
 Live demo:
-<https://your-demo-url.com>
+<https://my-task-board-ecru.vercel.app/>
 
 Repository:
-<https://github.com/yourname/my-task-board>
+<https://github.com/ogabor82/my-task-board>
 
 ---
 
@@ -49,8 +49,8 @@ Repository:
 
 ### Deployment
 
-* Frontend: Vercel / Netlify
-* Backend: Render / Vercel
+* Frontend: Vercel
+* Backend: Vercel
 
 ---
 
