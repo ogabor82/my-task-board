@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,5 +14,5 @@ body {
   margin: 0;
   background: radial-gradient(circle at 20% 0%, #ececf0 0%, #e3e4e9 55%, #dde0e6 100%);
   color: #101226;
-  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }

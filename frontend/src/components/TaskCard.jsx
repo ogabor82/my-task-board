@@ -27,11 +27,11 @@ export default function TaskCard({ task, isActive = false, onClick }) {
         {icon}
       </span>
       <div className="min-w-0 flex-1">
-        <h3 className="text-title text-[30px]/[1] font-semibold tracking-[-0.02em] sm:text-[36px]/[1]">
+        <h3 className="text-title text-type-task-title font-semibold">
           {task.title}
         </h3>
         {task.description ? (
-          <p className="text-text mt-2 text-[18px]/[1.35] font-normal sm:text-[19px]/[1.4]">
+          <p className="text-text text-type-description mt-2 font-light">
             {task.description}
           </p>
         ) : null}

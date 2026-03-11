@@ -17,7 +17,15 @@ export default {
         text: "#363746"
       },
       fontFamily: {
-        sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"]
+        sans: ["Outfit", "ui-sans-serif", "system-ui", "sans-serif"]
+      },
+      fontSize: {
+        "type-title": "2.5rem",
+        "type-description": "1rem",
+        "type-task-title": "1.25rem",
+        "type-task-button": "1rem",
+        "type-button-text": "0.875rem",
+        "type-input-label": "0.75rem"
       },
       boxShadow: {
         soft: "0 4px 16px rgba(17, 24, 39, 0.05)"

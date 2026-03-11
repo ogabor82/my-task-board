@@ -88,24 +88,24 @@ export default function App() {
         <header className="mb-2">
           <div className="flex items-center gap-3">
             <LogoIcon className="h-10 w-10" />
-            <h1 className="text-title text-[52px]/[1.05] font-semibold tracking-[-0.03em] sm:text-[64px]/[1]">
+            <h1 className="text-title text-type-title font-normal">
               {board?.title || "My Task Board"}
             </h1>
             <EditDuotoneIcon
               className="h-10 w-10"
             />
           </div>
-          <p className="text-text mt-3 pl-[54px] text-[27px]/[1.2] font-normal">
+          <p className="text-text text-type-description mt-3 pl-[54px] font-normal">
             {board?.description || "Tasks to keep organised"}
           </p>
         </header>
 
         {loading ? (
-          <p className="text-text rounded-2xl bg-white/40 px-4 py-3 text-[18px]">Loading board...</p>
+          <p className="text-text text-type-description rounded-2xl bg-white/40 px-4 py-3">Loading board...</p>
         ) : null}
 
         {error ? (
-          <p className="rounded-2xl bg-red-100 px-4 py-3 text-[18px] text-red-700">{error}</p>
+          <p className="text-type-description rounded-2xl bg-red-100 px-4 py-3 text-red-700">{error}</p>
         ) : null}
 
         {!loading && !error && board?.tasks?.length ? (
@@ -129,7 +129,7 @@ export default function App() {
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent">
             <AddRoundDuotoneIcon className="h-6 w-6" />
           </span>
-          <span className="text-title text-[34px] font-semibold tracking-[-0.02em]">Add new task</span>
+          <span className="text-title text-type-task-button font-semibold">Add new task</span>
         </button>
       </section>
 
